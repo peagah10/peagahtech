@@ -479,10 +479,10 @@
         
         .hero-mockup {
             position: absolute;
-            right: 5%;
+            right: 2%;
             top: 50%;
             transform: translateY(-50%);
-            max-width: 45%;
+            max-width: 28%;
             z-index: 1;
             filter: drop-shadow(0 10px 30px rgba(93, 92, 222, 0.3));
         }
@@ -822,10 +822,113 @@
         .feature-icon {
             color: var(--secondary-accent);
         }
+
+        /* Exemplos de Sites Section */
+        .examples-section {
+            background-color: var(--darker-bg);
+            position: relative;
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .example-category {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .example-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-accent));
+            transform: translateY(-4px);
+            transition: var(--transition);
+        }
+
+        .example-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+            border-color: rgba(93, 92, 222, 0.3);
+        }
+
+        .example-category:hover::before {
+            transform: translateY(0);
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(93, 92, 222, 0.3);
+        }
+
+        .category-title {
+            font-size: 22px;
+            color: var(--white);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .category-description {
+            color: var(--text-color-secondary);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .example-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .example-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            color: var(--text-color);
+            transition: var(--transition);
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .example-link:hover {
+            background: rgba(93, 92, 222, 0.1);
+            color: var(--primary-color);
+            border-color: rgba(93, 92, 222, 0.3);
+            transform: translateX(5px);
+        }
+
+        .example-link i {
+            color: var(--secondary-accent);
+            font-size: 12px;
+        }
         
         /* Portfolio section styles */
         .portfolio {
-            background-color: var(--darker-bg);
+            background-color: var(--dark-bg);
             position: relative;
         }
         
@@ -1370,111 +1473,6 @@
             color: white;
         }
         
-        /* CTA section */
-        .cta-section {
-            padding: 80px 0;
-            background: transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
-        
-        .cta-content {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta-title {
-            font-size: 40px;
-            color: white;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .cta-text {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn-cta {
-            background-color: white;
-            color: var(--primary-color);
-            border: 2px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-cta:hover {
-            background-color: transparent;
-            color: white;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn-cta-outline {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-cta-outline:hover {
-            background-color: white;
-            color: var(--primary-color);
-        }
-        
-        /* Image carousel for CTA section */
-        .cta-carousel {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            margin: 0 auto 40px;
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            box-shadow: var(--card-shadow);
-        }
-        
-        .cta-carousel-track {
-            display: flex;
-            height: 100%;
-            animation: slideRight 15s linear infinite;
-            width: max-content;
-        }
-        
-        @keyframes slideRight {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        
-        .cta-carousel-slide {
-            width: 100vw;
-            height: 100%;
-            flex-shrink: 0;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        
         /* Footer styles */
         footer {
             background-color: #0a0a0a;
@@ -1571,11 +1569,11 @@
             font-size: 14px;
         }
         
-        /* Back to top button */
+        /* Back to top button - moved to left */
         .back-to-top {
             position: fixed;
             bottom: 30px;
-            right: 30px;
+            left: 30px;
             width: 50px;
             height: 50px;
             border-radius: var(--border-radius);
@@ -1603,13 +1601,13 @@
             box-shadow: 0 5px 15px rgba(93, 92, 222, 0.5);
         }
         
-        /* WhatsApp button */
+        /* WhatsApp button - moved to right and smaller */
         .whatsapp-btn {
             position: fixed;
             bottom: 30px;
-            left: 30px;
-            width: 60px;
-            height: 60px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background-color: #25D366;
             color: white;
@@ -1628,80 +1626,7 @@
         }
         
         .whatsapp-icon {
-            font-size: 30px;
-        }
-        
-        /* Lead capture bar */
-        .lead-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 15px 0;
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
-            z-index: 98;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .lead-bar.active {
-            transform: translateY(0);
-        }
-        
-        .lead-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-        
-        .lead-text {
-            font-weight: 600;
-            color: var(--white);
-            font-size: 16px;
-        }
-        
-        .lead-text span {
-            color: var(--primary-color);
-        }
-        
-        .lead-form {
-            display: flex;
-            gap: 10px;
-            flex-grow: 1;
-            max-width: 500px;
-        }
-        
-        .lead-input {
-            flex-grow: 1;
-            padding: 12px 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--text-color);
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-        }
-        
-        .lead-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        
-        .lead-close {
-            cursor: pointer;
-            color: var(--text-color-secondary);
-            font-size: 18px;
-            transition: var(--transition);
-        }
-        
-        .lead-close:hover {
-            color: var(--white);
-            transform: rotate(90deg);
+            font-size: 24px;
         }
         
         /* Code block highlighting */
@@ -1837,7 +1762,12 @@
             }
             
             .hero-mockup {
-                max-width: 40%;
+                right: 2%;
+                max-width: 25%;
+            }
+            
+            .hero-content {
+                max-width: 65%;
             }
             
             .footer-container {
@@ -1891,6 +1821,7 @@
             .hero-content {
                 text-align: center;
                 margin: 0 auto;
+                max-width: 100%;
             }
             
             .hero-btns {
@@ -1898,7 +1829,13 @@
             }
             
             .hero-mockup {
-                display: none;
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                max-width: 100%;
+                margin-top: 40px;
+                text-align: center;
             }
             
             .about-content {
@@ -1918,6 +1855,10 @@
             }
             
             .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .examples-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1962,16 +1903,6 @@
             
             .social-links {
                 justify-content: center;
-            }
-            
-            .lead-container {
-                flex-direction: column;
-                align-items: stretch;
-                text-align: center;
-            }
-            
-            .lead-form {
-                max-width: 100%;
             }
             
             header {
@@ -2020,16 +1951,6 @@
             .service-image img {
                 width: 100%;
                 height: 100%;
-                object-fit: contain;
-            }
-            
-            /* Ajustes para o carousel em mobile - garantindo que a imagem não seja cortada */
-            .cta-carousel {
-                height: 300px;
-            }
-            
-            .cta-carousel-slide {
-                width: 100vw;
                 object-fit: contain;
             }
         }
@@ -2094,11 +2015,6 @@
                 object-fit: contain;
             }
             
-            /* Ajustes para carousel em telas muito pequenas - garantindo que a imagem não seja cortada */
-            .cta-carousel {
-                height: 250px;
-            }
-            
             .testimonial-quote {
                 font-size: 16px;
             }
@@ -2141,26 +2057,12 @@
         <!-- Mobile menu overlay -->
         <div class="mobile-menu-overlay"></div>
 
-        <!-- Back to top button -->
+        <!-- Back to top button (moved to left) -->
         <div class="back-to-top">
             <i class="fas fa-arrow-up"></i>
         </div>
 
-        <!-- Lead capture bar -->
-        <div class="lead-bar">
-            <div class="container lead-container">
-                <div class="lead-text"><span>Alavanque</span> seu negócio com soluções digitais de alto impacto</div>
-                <form class="lead-form">
-                    <input type="email" class="lead-input" placeholder="Seu melhor e-mail para contato">
-                    <button type="submit" class="btn btn-primary">Quero um orçamento</button>
-                </form>
-                <div class="lead-close">
-                    <i class="fas fa-times"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- WhatsApp button -->
+        <!-- WhatsApp button (moved to right and smaller) -->
         <a href="https://wa.me/5575991342279" class="whatsapp-btn" target="_blank">
             <i class="fab fa-whatsapp whatsapp-icon"></i>
         </a>
@@ -2850,33 +2752,148 @@
     </div>
 </section>
 
-<!-- CTA Section with Carousel -->
-<section class="cta-section">
-    <div class="cta-bg"></div>
+<!-- Exemplos de Sites Section -->
+<section id="examples" class="examples-section">
+    <div class="section-bg"></div>
     <div class="container">
-        <div class="cta-content">
-            <h2 class="cta-title">Transforme sua visão em realidade digital</h2>
-
-            <!-- Image Carousel - Modificado para mostrar apenas c2 em loop infinito -->
-            <div class="cta-carousel">
-                <div class="cta-carousel-track">
-                    <div class="cta-carousel-slide" style="background-image: url('images/c3.jpg');"></div>
-                    <div class="cta-carousel-slide" style="background-image: url('images/c3.jpg');"></div>
+        <h2 class="section-title">Exemplos de Sites por Categoria</h2>
+        <p>Confira projetos reais desenvolvidos pela PeagahTech em diferentes segmentos de mercado.</p>
+        
+        <div class="examples-grid">
+            
+            <!-- Loja de Roupas -->
+            <div class="example-category">
+                <div class="category-icon">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <h3 class="category-title">Loja de Roupas</h3>
+                <p class="category-description">E-commerces de moda com design moderno, catálogo organizado e experiência de compra otimizada.</p>
+                <div class="example-links">
+                    <a href="https://bellamoda-2.netlify.app/" target="_blank" class="example-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Bella Moda - Loja 1
+                    </a>
+                    <a href="https://bellamoda-1.netlify.app/" target="_blank" class="example-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Bella Moda - Loja 2
+                    </a>
                 </div>
             </div>
 
-            <p class="cta-text">Estamos prontos para desenvolver a solução ideal para o seu negócio. Nosso time de especialistas combina criatividade, tecnologia e estratégia para entregar resultados excepcionais.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-cta">
-                    <i class="fas fa-coffee"></i> Vamos Conversar
-                </a>
-                <a href="https://wa.me/5575991342279" class="btn btn-cta-outline" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp Direto
-                </a>
+            <!-- Loja de Suplementos -->
+            <div class="example-category">
+                <div class="category-icon">
+                    <i class="fas fa-capsules"></i>
+                </div>
+                <h3 class="category-title">Loja de Suplementos</h3>
+                <p class="category-description">Plataformas especializadas em suplementos nutricionais com informações técnicas e comparativos de produtos.</p>
+                <div class="example-links">
+                    <a href="https://prosupplements.netlify.app/" target="_blank" class="example-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Pro Supplements
+                    </a>
+                    <a href="https://powersup1.netlify.app/" target="_blank" class="example-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Power Supplements 1
+                    </a>
+                    <a href="https://powernutri2.netlify.app/" target="_blank" class="example-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Power Nutri 2
+                    </a>
+                </div>
             </div>
+
+            <!-- Sistema de Criptografia -->
+            <div class="example-category">
+                <div class="category-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="category-title">Sistema de Criptografia</h3>
+                <p class="category-description">Plataforma segura para criptografia e proteção de documentos confidenciais com interface intuitiva.</p>
+                <div class="example-links">
+                    <a href="https://sacsecure.netlify.app/" target="_blank" class="example-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        SAC Secure
+                    </a>
+                </div>
+            </div>
+
+            <!-- Clínicas Odontológicas -->
+            <div class="example-category">
+                <div class="category-icon">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <h3 class="category-title">Clínicas Odontológicas</h3>
+                <p class="category-description">Sites profissionais para dentistas com agendamento online, informações sobre tratamentos e depoimentos.</p>
+                <div class="example-links">
+                    <a href="https://alexandreross.netlify.app/" target="_blank" class="example-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Dr. Alexandre Ross
+                    </a>
+                    <a href="https://odontocompany.netlify.app/" target="_blank" class="example-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Odonto Company
+                    </a>
+                </div>
+            </div>
+
+            <!-- Nail Designer -->
+            <div class="example-category">
+                <div class="category-icon">
+                    <i class="fas fa-hand-sparkles"></i>
+                </div>
+                <h3 class="category-title">Nail Designer</h3>
+                <p class="category-description">Portfólios elegantes para profissionais de nail design com galeria de trabalhos e agendamento online.</p>
+                <div class="example-links">
+                    <a href="https://elegancenails.netlify.app/" target="_blank" class="example-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Elegance Nails
+                    </a>
+                    <a href="https://bellanails2.netlify.app/" target="_blank" class="example-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Bella Nails
+                    </a>
+                </div>
+            </div>
+
+            <!-- Salões de Beleza -->
+            <div class="example-category">
+                <div class="category-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <h3 class="category-title">Salões de Beleza</h3>
+                <p class="category-description">Sites completos para salões com apresentação de serviços, equipe, galeria e sistema de agendamento.</p>
+                <div class="example-links">
+                    <a href="https://belezasublime.netlify.app/" target="_blank" class="example-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Beleza Sublime
+                    </a>
+                    <a href="https://bellassalao.netlify.app/" target="_blank" class="example-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Bellas Salão
+                    </a>
+                </div>
+            </div>
+
+            <!-- Organização Pessoal -->
+            <div class="example-category">
+                <div class="category-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h3 class="category-title">Organização Financeira e Tarefas</h3>
+                <p class="category-description">Sistema web para gestão de finanças pessoais e organização de tarefas diárias com interface moderna.</p>
+                <div class="example-links">
+                    <a href="https://organixx.netlify.app/" target="_blank" class="example-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Organixx - Sistema Pessoal
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
+
             <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials">
   <div class="section-bg"></div>
@@ -3370,8 +3387,6 @@
   </div>
 </div>
 
-
-
     <script>
         // Função para carregar recursos não essenciais após a página estar pronta
         function loadDeferredResources() {
@@ -3455,8 +3470,6 @@
             const navLinks = document.querySelector('.nav-links');
             const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
             const backToTopBtn = document.querySelector('.back-to-top');
-            const leadBar = document.querySelector('.lead-bar');
-            const leadClose = document.querySelector('.lead-close');
             const contactForm = document.getElementById('contactForm');
             const loadingContainer = document.getElementById('loadingContainer');
             const header = document.getElementById('header');
@@ -3494,20 +3507,6 @@
                     backSpeed: 30,
                     backDelay: 2000,
                     loop: true
-                });
-            }
-            
-            // Lead bar - otimizado com timer único
-            const leadBarTimer = setTimeout(() => {
-                if (leadBar) leadBar.classList.add('active');
-            }, 5000);
-            
-            if (leadClose) {
-                leadClose.addEventListener('click', () => {
-                    if (leadBar) {
-                        leadBar.classList.remove('active');
-                        clearTimeout(leadBarTimer); // Limpa o timer se o usuário fechar manualmente
-                    }
                 });
             }
             
@@ -3748,26 +3747,6 @@
                     }
                 });
             }
-            
-            // Lead form submission - otimizado com delegação de eventos
-            document.addEventListener('submit', (e) => {
-                const form = e.target.closest('.lead-form');
-                if (form) {
-                    e.preventDefault();
-                    
-                    form.innerHTML = `
-                        <div style="display: flex; align-items: center; gap: 10px; color: var(--secondary-accent);">
-                            <i class="fas fa-check-circle" style="font-size: 20px;"></i>
-                            <span>E-mail cadastrado com sucesso! Entraremos em contato em breve.</span>
-                        </div>
-                    `;
-                    
-                    // Fecha a barra após confirmação
-                    setTimeout(() => {
-                        if (leadBar) leadBar.classList.remove('active');
-                    }, 3000);
-                }
-            });
             
             // Carrega recursos não essenciais com maior atraso para priorizar o conteúdo principal
             setTimeout(loadDeferredResources, 800);
